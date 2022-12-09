@@ -1,13 +1,15 @@
 project "GLFW"
 	kind "StaticLib"
 	language "C"
-	staticruntime "off"
-
+	--staticruntime "off"
+	staticruntime "on"
+	
 	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
 
 	files
 	{
+		"premake5.lua",
 		"include/GLFW/glfw3.h",
 		"include/GLFW/glfw3native.h",
 		"src/glfw_config.h",
